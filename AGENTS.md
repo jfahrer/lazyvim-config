@@ -13,4 +13,5 @@ This repository contains my LazyVIm configuration.
 * Verify your changes worked by starting neovim in headless mode
   * Ensure lazy installs any newly added plugins
   * Set the `NVIM_APPNAME` to the current working directory when invoking nvim
+* Always format changed files
 * Do not commit any changes!
