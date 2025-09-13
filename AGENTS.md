@@ -9,4 +9,8 @@ This repository contains my LazyVIm configuration.
 * Use the `keys` option to define key mappings for plugins
 * C-s is my tmux leader key, so don't use that for anything
 * Keep any plugin config to a minimum and don't add common defaults
+* Keep longer function in helper module in `lua/user/`
+* Verify your changes worked by starting neovim in headless mode
+  * Ensure lazy installs any newly added plugins
+  * Set the `NVIM_APPNAME` to the current working directory when invoking nvim
 * Do not commit any changes!
