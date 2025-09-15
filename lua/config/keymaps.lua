@@ -5,9 +5,12 @@
 local map = vim.keymap.set
 local del = vim.keymap.del
 
+-- I'm using `;` as my language leader. Unmapping the default behavior
+del("n", ";")
+
 -- Core stuff
-map("n", "s", function() vim.cmd.write() end, { desc = "Write current buffer", noremap = true, silent = true })
-map("n", "S", "<CMD>wall<CR>", { desc = "Write current buffer", noremap = true, silent = true })
+map("n", ";w", function() vim.cmd.write() end, { desc = "Write current buffer", noremap = true, silent = true })
+map("n", ";W", "<CMD>wall<CR>", { desc = "Write all buffers", noremap = true, silent = true })
 map("i", "jk", "<ESC>", { desc = "Exit insert mode", noremap = true, silent = true })
 map("n", "<C-c>", "<CMD>nohlsearch<CR>", { desc = "Stop highlighting search results", noremap = true, silent = true })
 
@@ -24,9 +27,14 @@ map("n", "<leader>q", "qq", { desc = "Start recording macro to q", noremap = tru
 map("n", "<leader>Q", "qqqqq", { desc = "Start recursive macro recording to q", noremap = true, silent = true })
 
 -- Default mappings I don't want
+--- Session Management
 del("n", "<leader>qq")
 del("n", "<leader>qd")
 del("n", "<leader>qs")
 del("n", "<leader>qS")
 del("n", "<leader>ql")
+--- Saving files
 del({ "n", "i", "x", "s" }, "<C-s>")
+--- Terminal
+del({ "n" }, "<leader>ft")
+del({ "n" }, "<leader>fT")
