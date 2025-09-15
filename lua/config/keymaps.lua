@@ -14,6 +14,10 @@ map("n", "<C-c>", "<CMD>nohlsearch<CR>", { desc = "Stop highlighting search resu
 -- Buffer / window management
 map("n", "q", require("user.smart-q").smart_q, { desc = "Close buffer (or stop macro if recording)", noremap = true, silent = true })
 map("n", "Q", "<CMD>close<CR>", { desc = "Close window", noremap = true, silent = true })
+map("n", "<leader>O", function()
+  vim.cmd("only!")
+  Snacks.bufdelete.other()
+end, { desc = "Close window", noremap = true, silent = true })
 
 -- Macro recording re-mappings
 map("n", "<leader>q", "qq", { desc = "Start recording macro to q", noremap = true, silent = true })
