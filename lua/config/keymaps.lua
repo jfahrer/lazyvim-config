@@ -12,7 +12,7 @@ map("i", "jk", "<ESC>", { desc = "Exit insert mode", noremap = true, silent = tr
 map("n", "<C-c>", "<CMD>nohlsearch<CR>", { desc = "Stop highlighting search results", noremap = true, silent = true })
 
 -- Buffer / window management
-map("n", "q", require("user.macro").smart_q, { desc = "Close buffer (or stop macro if recording)", noremap = true, silent = true })
+map("n", "q", require("user.smart-q").smart_q, { desc = "Close buffer (or stop macro if recording)", noremap = true, silent = true })
 map("n", "Q", "<CMD>close<CR>", { desc = "Close window", noremap = true, silent = true })
 
 -- Macro recording re-mappings
